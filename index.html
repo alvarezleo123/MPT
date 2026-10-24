@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -6,11 +5,78 @@
 <meta name="theme-color" content="#f4f6fb">
 <title>Моё расписание · МПТ</title>
 <style>
-:root{color-scheme:light;--bg:#f4f6fb;--surface:#fff;--surface2:#edf2fa;--text:#17233b;--muted:#74819a;--line:#e1e7f0;--accent:#4268e8;--accent2:#e9eeff;--mint:#dff7ed;--mint-text:#167b5c;--orange:#fff0dc;--orange-text:#a96012;--shadow:0 12px 32px rgba(33,53,95,.07)}
+:root{color-scheme:dark;--bg:#111722;--surface:#1b2432;--surface2:#222e40;--text:#edf2fc;--muted:#9ba9bf;--line:#303c50;--accent:#83a6ff;--accent2:#263a5c;--mint:#1e3d3b;--mint-text:#8be0c2;--orange:#493621;--orange-text:#ffd08d;--shadow:0 12px 30px rgba(0,0,0,.16)}
 *{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top right,#e8edff 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,input:focus-visible{outline:3px solid #9caeff;outline-offset:3px}.app{width:min(100%,760px);margin:auto;padding:22px 17px calc(40px + env(safe-area-inset-bottom))}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:27px;animation:rise .5s both}.brand{display:flex;align-items:center;gap:12px;min-width:0}.logo{width:48px;height:48px;display:grid;place-items:center;flex:none;border-radius:17px;background:linear-gradient(145deg,#5479f5,#3653cc);color:white;box-shadow:0 8px 18px #4268e83b}.logo svg{width:25px;height:25px}.title{font-size:clamp(21px,4vw,27px);font-weight:780;letter-spacing:-.8px;line-height:1.2}.subtitle{color:var(--muted);font-size:12px;margin-top:4px}.top-actions{display:flex;gap:8px}.iconbtn{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.85);color:var(--text);box-shadow:0 4px 12px #25365b0a;transition:transform .18s,background .18s}.iconbtn:hover{background:white;transform:translateY(-2px)}.iconbtn:active{transform:scale(.94)}.iconbtn svg{width:20px;height:20px}.hero{padding:21px 20px 18px;border-radius:25px;background:linear-gradient(125deg,#263e9d,#4d6ce5 72%,#7188f2);color:white;box-shadow:0 15px 35px #3b56bd2b;position:relative;overflow:hidden;animation:rise .55s .04s both}.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff20;border-radius:50%;right:-70px;top:-120px;box-shadow:0 0 0 25px #ffffff08,0 0 0 52px #ffffff06}.hero-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#dce4ff;font-weight:750}.hero-date{font-size:clamp(23px,5vw,30px);font-weight:780;letter-spacing:-.7px;line-height:1.2;margin-top:5px;text-transform:capitalize}.hero-note{font-size:12px;color:#e0e6ff;margin-top:7px}.today-pill{position:relative;z-index:1;white-space:nowrap;border:1px solid #ffffff45;background:#ffffff1b;color:white;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700}.calendar{margin-top:21px;animation:rise .55s .08s both}.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.month-title{font-size:16px;font-weight:780;text-transform:capitalize}.month-controls{display:flex;gap:6px}.month-controls button{width:35px;height:35px;border:1px solid var(--line);border-radius:12px;background:white;color:var(--text);font-size:21px;line-height:1;transition:transform .18s}.month-controls button:active{transform:scale(.92)}.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}.day{min-width:0;min-height:72px;border:1px solid transparent;border-radius:18px;background:transparent;color:var(--muted);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:background .2s,border-color .2s,transform .2s,color .2s;touch-action:pan-y}.day .weekday{font-size:11px;font-weight:700;text-transform:capitalize}.day .daynum{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:15px;font-weight:750;color:var(--text);background:#e8edf6;transition:all .2s}.day .dot{height:4px;width:4px;border-radius:50%;background:transparent}.day.selected{background:white;border-color:#dbe3ff;box-shadow:0 7px 18px #2c4fbf12;color:var(--accent)}.day.selected .daynum{background:var(--accent);color:white;box-shadow:0 5px 12px #4268e840}.day.today:not(.selected) .daynum{outline:2px solid #a8b8ff;outline-offset:2px}.day:active{transform:scale(.96)}.summary{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:22px 0 25px;animation:rise .55s .12s both}.stat{display:flex;align-items:center;gap:12px;min-width:0;padding:16px 14px;background:var(--surface);border:1px solid #e9edf5;border-radius:20px;box-shadow:var(--shadow)}.stat-icon{width:41px;height:41px;flex:none;border-radius:14px;display:grid;place-items:center;background:var(--accent2);color:var(--accent)}.stat-icon.green{background:var(--mint);color:var(--mint-text)}.stat-icon svg{width:20px;height:20px}.stat small{display:block;font-size:11px;color:var(--muted);line-height:1.25}.stat strong{display:block;font-size:16px;font-weight:800;letter-spacing:-.3px;margin-top:4px;overflow-wrap:anywhere}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 2px 12px}.section-head h2{font-size:19px;letter-spacing:-.4px;margin:0;font-weight:800}.count{font-size:12px;color:var(--muted);background:#e9edf6;border-radius:999px;padding:5px 10px}.classes{display:flex;flex-direction:column;gap:10px}.lesson{display:grid;grid-template-columns:65px minmax(0,1fr);gap:13px;padding:15px;background:var(--surface);border:1px solid #e8edf5;border-radius:20px;box-shadow:var(--shadow);position:relative;overflow:hidden;animation:rise .35s both}.lesson:nth-child(2){animation-delay:.04s}.lesson:nth-child(3){animation-delay:.08s}.lesson:nth-child(4){animation-delay:.12s}.lesson.current{border-color:#9eafff;background:linear-gradient(115deg,#fff,#f5f7ff)}.lesson.current:before{content:"";position:absolute;left:0;top:15px;bottom:15px;width:4px;border-radius:0 4px 4px 0;background:var(--accent)}.timecol{border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:3px}.timecol b{font-size:15px;font-weight:800;white-space:nowrap}.timecol small{font-size:12px;color:var(--muted)}.lesson-body{min-width:0}.status{display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.6px}.status:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px #4268e81a}.lesson-title{font-size:15px;font-weight:750;line-height:1.4;margin:0 0 8px;overflow-wrap:anywhere}.lesson-meta{display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--muted);font-size:12px}.meta-item{display:inline-flex;align-items:center;gap:5px}.meta-item svg{width:14px;height:14px;flex:none;color:var(--accent)}.break{display:flex;align-items:center;gap:10px;margin:0 9px;color:var(--muted);font-size:11px}.break:before,.break:after{content:"";height:1px;flex:1;background:var(--line)}.break strong{font-weight:700;color:#65738d}.empty{padding:26px 18px;background:white;border:1px dashed #d8e0ef;border-radius:20px;color:var(--muted);text-align:center}.empty-icon{font-size:26px;margin-bottom:7px}.replace-card{background:white;border:1px solid #e8edf5;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}.replace-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 16px;border-bottom:1px solid #edf0f6}.replace-head b{font-size:14px;font-weight:800}.pill{padding:5px 9px;border-radius:999px;background:var(--surface2);color:var(--muted);font-size:10px;font-weight:750;white-space:nowrap}.pill.ok{background:var(--mint);color:var(--mint-text)}.replace-body{padding:15px 16px;color:var(--muted);font-size:13px}.replace-body strong{display:block;color:var(--text);font-weight:750;margin-bottom:4px}.next-card{display:flex;align-items:center;gap:12px;margin-top:12px;padding:15px;background:#edf1ff;border:1px solid #dfe6ff;border-radius:18px}.next-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:white;color:var(--accent);flex:none}.next-icon svg{width:20px;height:20px}.next-info{flex:1;min-width:0}.next-info small{display:block;color:var(--muted);font-size:11px}.next-info strong{font-size:13px;font-weight:750;display:block;overflow-wrap:anywhere}.next-time{font-size:12px;color:var(--accent);font-weight:750;white-space:nowrap}.notice{font-size:12px;color:var(--muted);margin:14px 3px 0}.notice.error{color:#b83a4b;background:#fff0f1;padding:12px;border-radius:12px}.notice.success{color:var(--mint-text)}.settings-backdrop{position:fixed;inset:0;z-index:10;display:none;align-items:flex-end;justify-content:center;background:#111b35a6;backdrop-filter:blur(6px);padding:12px}.settings-backdrop.open{display:flex;animation:fade .2s both}.settings-panel{width:min(100%,520px);padding:23px;background:white;border-radius:26px;box-shadow:0 25px 80px #111b3540;animation:sheet .28s both}.settings-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}.settings-title h2{margin:0;font-size:21px;letter-spacing:-.5px}.close-settings{width:37px;height:37px;border:0;border-radius:13px;background:var(--surface2);font-size:22px}.settings-desc{color:var(--muted);font-size:13px;margin:0 0 18px}.field-label{display:block;font-size:12px;font-weight:750;margin-bottom:7px}.field{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:#f9faff;color:var(--text);font-size:13px}.savebtn{width:100%;margin-top:13px;padding:13px;border:0;border-radius:14px;background:var(--accent);color:white;font-weight:800;box-shadow:0 8px 18px #4268e82e;transition:transform .18s}.savebtn:active{transform:scale(.98)}.settings-hint{margin-top:12px;font-size:11px;color:var(--muted);line-height:1.5}.spin{animation:spin .7s linear infinite}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{from{opacity:0}to{opacity:1}}@keyframes sheet{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes spin{to{transform:rotate(360deg)}}
 @media(min-width:600px){.app{padding-top:30px}.hero{padding:26px 25px}.day{min-height:82px}.day .daynum{width:39px;height:39px}.lesson{padding:18px 19px;grid-template-columns:76px minmax(0,1fr)}.lesson-title{font-size:16px}.settings-backdrop{align-items:center}}
 @media(max-width:390px){.app{padding-left:12px;padding-right:12px}.days{gap:3px}.day{min-height:65px;border-radius:14px}.day .weekday{font-size:10px}.day .daynum{width:31px;height:31px;font-size:14px}.stat{padding:13px 10px;gap:8px}.stat-icon{width:35px;height:35px}.stat strong{font-size:14px}.hero{padding:18px 16px}.today-pill{font-size:11px;padding:6px 8px}}
+
+/* Night-friendly redesign overrides */
+html,body{background:#111722;color:var(--text)}
+body{background:radial-gradient(ellipse at 90% 0%,#1c2a43 0,transparent 38%),#111722}
+.app{padding-top:19px}
+.top{margin-bottom:22px}
+.logo{background:linear-gradient(145deg,#5f83e9,#344c8c);box-shadow:0 8px 20px #0004;border-radius:15px}
+.title{letter-spacing:-.5px}
+.iconbtn{background:#202b3b;border:1px solid #354258;color:#dfe8fb;border-radius:50%;width:46px;height:46px;box-shadow:0 5px 14px #0002}
+.iconbtn:hover{background:#2b3850;border-color:#53688b;transform:rotate(-5deg)}
+.hero{background:linear-gradient(120deg,#202f50,#304b7d 68%,#405e98);box-shadow:0 14px 32px #0003;border:1px solid #425b87}
+.hero:after{border-color:#ffffff12;box-shadow:0 0 0 25px #ffffff05,0 0 0 52px #ffffff03}
+.today-pill{border:1px solid #8fa8d866;background:#ffffff0c}
+.calendar{margin-top:22px;padding:0 2px}
+.calendar-head{margin-bottom:12px}
+.month-title{font-size:15px;color:#dbe5f8}
+.month-controls button{background:#202b3b;border:1px solid #354258;color:#dbe5f8;border-radius:50%;width:38px;height:38px}
+.days{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:7px 3px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 54px;min-height:84px;border-radius:28px;background:#1b2432;border:1px solid #2c384b;color:#9eacc3;gap:8px;scroll-snap-align:center}
+.day .weekday{font-size:11px;font-weight:750}
+.day .daynum{width:43px;height:43px;font-size:17px;color:#e5ecfb;background:#2a3548}
+.day .dot{display:none}
+.day.selected{background:#283b5d;border-color:#7799ed;color:#c7d8ff;box-shadow:0 7px 20px #0003}
+.day.selected .daynum{background:#8caaff;color:#17233b;box-shadow:0 4px 12px #0003}
+.day.today:not(.selected) .daynum{outline:2px solid #7899e7;outline-offset:2px}
+.summary{margin:18px 0 24px;gap:10px}
+.stat{background:#1b2432;border-color:#303c50;border-radius:18px;box-shadow:var(--shadow)}
+.stat-icon{background:#293b5d;color:#a9c2ff}
+.stat-icon.green{background:#203c3a;color:#8be0c2}
+.stat small,.subtitle{color:#9ba9bf}
+.stat strong{color:#f0f4ff}
+.section-head h2{color:#f0f4ff}
+.count{background:#263246;color:#aab8cf}
+.lesson{background:#1b2432;border-color:#303c50;box-shadow:var(--shadow);border-radius:19px}
+.lesson.current{background:#202d43;border-color:#718fd2}
+.lesson.current:before{background:#91adff}
+.timecol{border-color:#344157}
+.timecol b{color:#e9f0ff}
+.timecol small,.lesson-meta{color:#a7b4ca}
+.meta-item svg{color:#9bb7ff}
+.status{color:#9bb7ff}
+.break:before,.break:after{background:#303c50}
+.break strong{color:#c4d0e4}
+.empty{background:#1b2432;border:1px dashed #3a4961;color:#aab7cb;border-radius:19px}
+.replace-card{background:#1b2432;border-color:#303c50;border-radius:19px;box-shadow:var(--shadow)}
+.replace-head{border-color:#303c50}
+.replace-body{color:#aab7cb}
+.replace-body strong{color:#edf2fc}
+.pill{background:#29364a;color:#aab8cf}
+.pill.ok{background:#203c3a;color:#8be0c2}
+.next-card{background:#202e45;border-color:#35496c}
+.next-icon{background:#2b3d5c;color:#a9c2ff}
+.settings-backdrop{background:#070b12c9}
+.settings-panel{background:#1b2432;border:1px solid #354258;color:#edf2fc;box-shadow:0 25px 80px #0008}
+.close-settings{background:#2a3548;color:#e9f0ff}
+.field{background:#121a26;border-color:#3a4960;color:#edf2fc}
+.field::placeholder{color:#7788a2}
+.settings-desc,.settings-hint{color:#a0aec3}
+.savebtn{background:#7899f0;color:#101a2b;box-shadow:0 8px 18px #0003}
+.notice{color:#9ba9bf}
+.notice.error{background:#3b222b;color:#ffb6c0}
+.notice.success{color:#8be0c2}
+#refresh-icon{transition:transform .2s}
+#refresh-icon.spin{animation:spin .7s linear infinite}
+@media(max-width:390px){.day{flex-basis:51px;min-height:80px}.day .daynum{width:41px;height:41px}}
+
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -18,7 +84,7 @@
 <div class="app">
 <header class="top">
  <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="4"/><path d="M8 2v4M16 2v4M3 9h18M8 13h3M8 17h7"/></svg></div><div><div class="title">Моё расписание</div><div class="subtitle">МПТ · учебный календарь</div></div></div>
- <div class="top-actions"><button class="iconbtn" id="refresh" aria-label="Обновить расписание" title="Обновить"><svg id="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button><button class="iconbtn" id="open-settings" aria-label="Настройки" title="Настройки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1 1.8-1.8 3.1-2.1-.6a8 8 0 0 1-1.6.9l-.5 2.1h-3.6l-.5-2.1a8 8 0 0 1-1.6-.9l-2.1.6-1.8-3.1L6 15a8 8 0 0 1 0-1.9l-1.1-1.8 1.8-3.1 2.1.6a8 8 0 0 1 1.6-.9l.5-2.1h3.6l.5 2.1a8 8 0 0 1 1.6.9l2.1-.6 1.8 3.1-1.1 1.8a8 8 0 0 1 0 1.9Z" transform="translate(-1 -1) scale(1.04)"/></svg></button></div>
+ <div class="top-actions"><button class="iconbtn" id="refresh" aria-label="Обновить расписание" title="Обновить"><svg id="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.7-4L4 9"/><path d="M4 4v5h5"/><path d="M4 13a8 8 0 0 0 14.7 4L20 15"/><path d="M20 20v-5h-5"/></svg></button><button class="iconbtn" id="open-settings" aria-label="Настройки" title="Настройки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1 1.8-1.8 3.1-2.1-.6a8 8 0 0 1-1.6.9l-.5 2.1h-3.6l-.5-2.1a8 8 0 0 1-1.6-.9l-2.1.6-1.8-3.1L6 15a8 8 0 0 1 0-1.9l-1.1-1.8 1.8-3.1 2.1.6a8 8 0 0 1 1.6-.9l.5-2.1h3.6l.5 2.1a8 8 0 0 1 1.6.9l2.1-.6 1.8 3.1-1.1 1.8a8 8 0 0 1 0 1.9Z" transform="translate(-1 -1) scale(1.04)"/></svg></button></div>
 </header>
 <section class="hero"><div class="hero-top"><div><div class="eyebrow">ТВОЙ УЧЕБНЫЙ ДЕНЬ</div><div class="hero-date" id="hero-date">Сегодня</div><div class="hero-note" id="hero-note">Загружаем расписание…</div></div><button class="today-pill" id="today-btn">Сегодня ↗</button></div></section>
 <section class="calendar" aria-label="Календарь расписания"><div class="calendar-head"><div class="month-title" id="month-title">Октябрь 2026</div><div class="month-controls"><button id="prev-month" aria-label="Предыдущий месяц">‹</button><button id="next-month" aria-label="Следующий месяц">›</button></div></div><div class="days" id="days" aria-label="Выберите день"></div></section>
@@ -45,19 +111,17 @@ let shownMonth=new Date(selected.getFullYear(),selected.getMonth(),1);
 let lessons=[],replacements=[],liveData=false,apiBase=localStorage.getItem('mpt_api_base')||DEFAULT_API,requestId=0;
 $('api-url').value=apiBase;
 function renderCalendar(){
- $('month-title').textContent=cap(fmtMonth(shownMonth));
+ $('month-title').textContent=cap(fmtMonth(selected));
  const root=$('days');root.innerHTML='';
- const first=new Date(shownMonth.getFullYear(),shownMonth.getMonth(),1);
- const offset=(first.getDay()+6)%7;
- const count=new Date(shownMonth.getFullYear(),shownMonth.getMonth()+1,0).getDate();
- const labels=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
- for(let i=0;i<offset;i++){const blank=document.createElement('div');blank.setAttribute('aria-hidden','true');root.appendChild(blank)}
- for(let n=1;n<=count;n++){
-  const d=new Date(shownMonth.getFullYear(),shownMonth.getMonth(),n);const b=document.createElement('button');
+ const labels=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+ for(let offset=-3;offset<=3;offset++){
+  const d=new Date(selected);d.setDate(selected.getDate()+offset);
+  const b=document.createElement('button');
   b.className='day'+(dateKey(d)===dateKey(selected)?' selected':'')+(dateKey(d)===dateKey(new Date())?' today':'');
   b.setAttribute('aria-label',cap(fmtDate(d)));b.setAttribute('aria-pressed',dateKey(d)===dateKey(selected)?'true':'false');
-  b.innerHTML=`<span class="weekday">${labels[(offset+n-1)%7]}</span><span class="daynum">${n}</span><span class="dot"></span>`;
-  b.onclick=()=>{selected=d;renderCalendar();refreshData()};root.appendChild(b);
+  b.innerHTML=`<span class="weekday">${labels[d.getDay()]}</span><span class="daynum">${d.getDate()}</span>`;
+  b.onclick=()=>{selected=d;renderCalendar();refreshData()};
+  root.appendChild(b);
  }
 }
 function renderLessons(){
@@ -108,7 +172,7 @@ async function refreshData(){
  }
  render();btn.classList.remove('spin');
 }
-function moveMonth(delta){shownMonth=new Date(shownMonth.getFullYear(),shownMonth.getMonth()+delta,1);renderCalendar()}
+function moveMonth(delta){selected=new Date(selected);selected.setDate(selected.getDate()+delta*7);shownMonth=new Date(selected.getFullYear(),selected.getMonth(),1);renderCalendar();refreshData()}
 $('prev-month').onclick=()=>moveMonth(-1);$('next-month').onclick=()=>moveMonth(1);
 $('today-btn').onclick=()=>{selected=new Date();selected.setHours(0,0,0,0);shownMonth=new Date(selected.getFullYear(),selected.getMonth(),1);refreshData()};
 $('refresh').onclick=refreshData;
@@ -117,7 +181,7 @@ $('close-settings').onclick=()=>$('settings-backdrop').classList.remove('open');
 $('settings-backdrop').addEventListener('click',e=>{if(e.target===$('settings-backdrop'))$('settings-backdrop').classList.remove('open')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$('settings-backdrop').classList.remove('open')});
 $('save-settings').onclick=()=>{const val=$('api-url').value.trim().replace(/\/+$/,'');apiBase=val||DEFAULT_API;localStorage.setItem('mpt_api_base',apiBase);$('settings-backdrop').classList.remove('open');refreshData()};
-let touchX=null;const calendar=$('days');calendar.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});calendar.addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>65)moveMonth(dx<0?1:-1);touchX=null},{passive:true});
+let touchX=null;const calendar=$('days');calendar.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});calendar.addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45){selected=new Date(selected);selected.setDate(selected.getDate()+(dx<0?1:-1));shownMonth=new Date(selected.getFullYear(),selected.getMonth(),1);renderCalendar();refreshData()}touchX=null},{passive:true});
 render();refreshData();
 </script>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
