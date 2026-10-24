@@ -3,64 +3,312 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080f1a">
-<title>Моё расписание</title>
+<meta name="theme-color" content="#0a0d16">
+<title>Моё расписание — МПТ</title>
 <style>
-:root{color-scheme:dark;--bg:#080f1a;--panel:#0d1827;--panel2:#101f31;--line:#24364c;--text:#edf4ff;--muted:#91a8c8;--blue:#3995ff;--blue2:#153d68;--green:#35d6b0;--warn:#ffc86b;--radius:15px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}.app{max-width:760px;margin:0 auto;padding:18px 15px 94px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.brand{display:flex;align-items:center;gap:11px}.logo{display:grid;place-items:center;width:43px;height:43px;border-radius:13px;background:#112b48;color:var(--blue);font-size:23px}.title{font-size:22px;font-weight:650;letter-spacing:-.5px}.subtitle{color:var(--muted);font-size:12px;margin-top:2px}.iconbtn{width:38px;height:38px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:18px}.datebar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}.date-label{font-size:17px;font-weight:600}.date-actions{display:flex;align-items:center;gap:7px}.date-actions button{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.todaybtn{padding:0 11px!important;width:auto!important;color:#bcd8ff}.weekstrip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-bottom:13px}.daybtn{min-width:0;padding:9px 2px 8px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--muted)}.daybtn span{display:block;font-size:11px}.daybtn b{display:block;font-size:14px;font-weight:550;margin-top:2px}.daybtn.active{background:#102d4d;border-color:#2168a8;color:#fff}.summary{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:17px}.metric{display:flex;align-items:center;gap:10px;min-width:0;padding:13px 12px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(135deg,#11243a,#0c1725)}.metric-icon{font-size:19px;color:var(--blue)}.metric small{display:block;color:var(--muted);font-size:11px}.metric strong{display:block;font-size:14px;font-weight:600;margin-top:2px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:21px 1px 10px}.section-head h2{font-size:15px;font-weight:650;margin:0}.section-head span{font-size:11px;color:var(--muted)}.classes{display:flex;flex-direction:column;gap:9px}.lesson{display:grid;grid-template-columns:52px 1fr 20px;gap:11px;align-items:stretch;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--panel);position:relative;overflow:hidden}.lesson.current{border-color:#2377c8;background:linear-gradient(110deg,#102d4b,#0d1928 75%)}.lesson.current:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue)}.timecol{border-right:1px solid var(--line);padding:2px 8px 2px 0;display:flex;flex-direction:column;justify-content:center}.timecol b{font-size:14px;font-weight:650;white-space:nowrap}.timecol small{font-size:11px;color:var(--muted);margin-top:3px}.lesson-body{min-width:0}.lesson-title{font-size:14px;font-weight:580;line-height:1.35;margin:0 0 7px}.lesson-meta{display:flex;flex-wrap:wrap;gap:5px 12px;color:var(--muted);font-size:11px}.meta-item{display:inline-flex;align-items:center;gap:5px}.meta-item .sym{color:#75b7ff}.status{display:inline-flex;align-items:center;gap:5px;margin-bottom:6px;color:#71bdff;font-size:10px;font-weight:650}.status:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue)}.lesson-arrow{align-self:center;color:#7896ba;font-size:18px}.empty{padding:22px 14px;border:1px dashed var(--line);border-radius:13px;color:var(--muted);text-align:center}.replace-card{border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}.replace-head{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:1px solid var(--line)}.replace-head b{font-size:14px;font-weight:600}.pill{padding:4px 8px;border-radius:999px;background:#103b39;color:var(--green);font-size:10px}.replace-body{padding:13px 14px;color:var(--muted);font-size:12px}.replace-body strong{display:block;color:var(--text);font-weight:550;margin-bottom:4px}.next-card{display:flex;align-items:center;gap:11px;margin-top:12px;padding:13px;border:1px solid #1d4770;border-radius:13px;background:#0c2035}.next-icon{font-size:20px;color:var(--blue)}.next-info{flex:1;min-width:0}.next-info small{display:block;color:var(--muted);font-size:11px}.next-info strong{font-size:13px;font-weight:580}.next-time{color:#8cc5ff;font-size:12px;white-space:nowrap}.notice{font-size:11px;color:var(--muted);margin:12px 2px 0}.notice.error{color:#ffb7a9}.tabs{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,760px);display:grid;grid-template-columns:repeat(4,1fr);padding:9px 7px calc(9px + env(safe-area-inset-bottom));background:rgba(8,15,26,.96);border-top:1px solid var(--line);backdrop-filter:blur(16px)}.tab{display:flex;flex-direction:column;align-items:center;gap:3px;border:0;background:none;color:var(--muted);font-size:10px;padding:5px 0}.tab .tabicon{font-size:18px}.tab.active{color:var(--blue)}.tab.active .tabicon{filter:drop-shadow(0 0 5px #2478cc)}.page{display:none}.page.active{display:block}.week-list{display:flex;flex-direction:column;gap:8px}.week-day{width:100%;text-align:left;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:flex;justify-content:space-between;align-items:center}.week-day.active{border-color:var(--blue);background:#10243a}.week-day small{display:block;color:var(--muted);margin-top:3px}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}.settings-row label{font-size:13px}.settings-row input{width:65px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:7px}.primarybtn{width:100%;margin-top:15px;padding:11px;border:0;border-radius:11px;background:var(--blue);color:#06101c;font-weight:650}.smallprint{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.55}
-@media(min-width:560px){.app{padding:24px 22px 100px}.title{font-size:24px}.lesson{grid-template-columns:62px 1fr 22px;padding:15px}.lesson-title{font-size:15px}.lesson-meta{font-size:12px}.metric{padding:15px}.metric strong{font-size:15px}}
+:root{
+  color-scheme:dark;
+  --bg:#0a0d16;--surface:#111725;--surface2:#171f30;--line:#293449;
+  --text:#f3f6ff;--muted:#98a6bf;--blue:#70a7ff;--blue-deep:#254d91;
+  --cyan:#67e4dc;--amber:#ffc879;--red:#ff8e9b;--radius:18px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 90% -10%,#172b4c 0,transparent 38%),var(--bg);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+button,input{font:inherit}
+button{color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+button:disabled{opacity:.45;cursor:default}
+.app{max-width:760px;min-height:100dvh;margin:0 auto;padding:18px 16px calc(100px + env(safe-area-inset-bottom))}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:46px;height:46px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#7db5ff,#5074ee);color:#071426;box-shadow:0 8px 28px #477ce43b;flex:none}
+.logo svg{width:25px;height:25px}
+.title{font-size:21px;font-weight:760;letter-spacing:-.6px}
+.subtitle{font-size:12px;color:var(--muted);margin-top:1px}
+.top-actions{display:flex;gap:8px}
+.icon-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:14px;background:#121a29;color:#dce7ff}
+.icon-btn svg{width:19px;height:19px}
+.icon-btn:active{transform:scale(.96)}
+.page{display:none;animation:appear .18s ease-out}
+.page.active{display:block}
+@keyframes appear{from{opacity:.65;transform:translateY(3px)}to{opacity:1;transform:none}}
+.datebar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}
+.date-label{font-size:20px;font-weight:740;letter-spacing:-.4px;text-transform:capitalize}
+.date-actions{display:flex;align-items:center;gap:6px}
+.date-actions button{height:36px;min-width:36px;padding:0 10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:#dce7ff}
+.date-actions .today-btn{font-size:12px;font-weight:650;color:var(--blue)}
+.week-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:17px}
+.day-btn{min-width:0;padding:10px 1px 9px;border:1px solid transparent;border-radius:15px;background:rgba(17,23,37,.75);color:var(--muted);transition:.15s}
+.day-btn .day-name{display:block;font-size:10px;text-transform:uppercase;font-weight:700;letter-spacing:.3px}
+.day-btn .day-number{display:block;font-size:16px;font-weight:750;margin:5px 0 4px;color:var(--text)}
+.day-btn .day-dot{display:block;width:5px;height:5px;margin:auto;border-radius:50%;background:transparent}
+.day-btn.has-classes .day-dot{background:var(--cyan)}
+.day-btn.active{background:linear-gradient(155deg,#294e8d,#1a2b4c);border-color:#5e91e8;color:#fff;box-shadow:0 6px 18px #244f9430}
+.day-btn.active .day-dot{background:#fff}
+.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:25px}
+.metric{display:flex;align-items:center;gap:11px;min-width:0;padding:15px 13px;border:1px solid #27344a;border-radius:17px;background:linear-gradient(145deg,#182337,#111725 80%)}
+.metric-icon{width:38px;height:38px;display:grid;place-items:center;flex:none;border-radius:12px;background:#233b60;color:var(--blue)}
+.metric-icon svg{width:19px;height:19px}
+.metric small{display:block;color:var(--muted);font-size:11px}
+.metric strong{display:block;font-size:15px;font-weight:750;margin-top:2px;letter-spacing:-.2px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 1px 11px}
+.section-head h2{font-size:16px;font-weight:760;margin:0;letter-spacing:-.2px}
+.section-head span{font-size:11px;color:var(--muted)}
+.classes{display:flex;flex-direction:column;gap:0}
+.lesson{display:grid;grid-template-columns:57px minmax(0,1fr);gap:12px;align-items:stretch;padding:14px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,#151d2c,#111725);position:relative;overflow:hidden}
+.lesson.current{border-color:#528be2;background:linear-gradient(120deg,#1a3458,#121b2b 78%);box-shadow:0 8px 26px #234b8426}
+.lesson.current:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue)}
+.time-col{border-right:1px solid #303b50;padding:3px 9px 3px 0;display:flex;flex-direction:column;justify-content:center}
+.time-col b{font-size:14px;font-weight:800;white-space:nowrap}
+.time-col small{font-size:11px;color:var(--muted);margin-top:4px}
+.lesson-body{min-width:0}
+.lesson-title{font-size:14px;font-weight:700;line-height:1.4;margin:0 0 9px;overflow-wrap:anywhere}
+.lesson-meta{display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--muted);font-size:11px}
+.meta-item{display:inline-flex;align-items:center;gap:5px}
+.meta-item svg{width:13px;height:13px;color:var(--blue);flex:none}
+.status{display:inline-flex;align-items:center;gap:6px;margin:0 0 7px;color:#91bdff;font-size:10px;font-weight:800;letter-spacing:.6px}
+.status:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 9px #70a7ff}
+.status.done{color:#8491a7}
+.status.done:before{background:#718097;box-shadow:none}
+.break-row{display:flex;align-items:center;gap:9px;padding:9px 10px 9px 17px;color:#8aa0bd;font-size:11px}
+.break-line{height:1px;flex:1;background:#253248}
+.break-tag{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.break-tag svg{width:13px;height:13px;color:var(--cyan)}
+.break-tag b{color:var(--cyan);font-weight:650}
+.empty{padding:24px 16px;border:1px dashed #35445c;border-radius:16px;color:var(--muted);text-align:center;background:#101725}
+.empty strong{display:block;color:var(--text);margin-bottom:5px;font-size:14px}
+.replace-card{border:1px solid var(--line);border-radius:17px;background:var(--surface);overflow:hidden}
+.replace-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 15px;border-bottom:1px solid var(--line)}
+.replace-title{display:flex;align-items:center;gap:9px;font-weight:700}
+.replace-title svg{width:18px;height:18px;color:var(--amber)}
+.pill{padding:5px 9px;border-radius:999px;background:#24354a;color:#bdcce3;font-size:10px;font-weight:700;white-space:nowrap}
+.pill.ok{background:#153b39;color:var(--cyan)}
+.pill.warn{background:#453421;color:var(--amber)}
+.replace-body{padding:15px;color:var(--muted);font-size:12px}
+.replace-body strong{display:block;color:var(--text);font-weight:700;margin-bottom:5px}
+.next-card{display:flex;align-items:center;gap:12px;margin-top:14px;padding:15px;border:1px solid #315080;border-radius:17px;background:linear-gradient(120deg,#172d4b,#111a29)}
+.next-icon{width:40px;height:40px;display:grid;place-items:center;flex:none;border-radius:13px;background:#244875;color:#a7cbff}
+.next-icon svg{width:20px;height:20px}
+.next-info{flex:1;min-width:0}
+.next-info small{display:block;color:var(--muted);font-size:11px}
+.next-info strong{display:block;font-size:13px;font-weight:700;line-height:1.35;margin-top:2px}
+.next-time{color:#a9cbff;font-size:12px;font-weight:700;white-space:nowrap}
+.notice{font-size:11px;color:var(--muted);margin:13px 2px 0;line-height:1.5}
+.notice.error{color:var(--red)}
+.notice.connected{color:var(--cyan)}
+.tabs{position:fixed;z-index:10;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,760px);display:grid;grid-template-columns:repeat(3,1fr);padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(10,13,22,.94);border-top:1px solid #263146;backdrop-filter:blur(18px)}
+.tab{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;border-radius:12px;background:none;color:#8290a8;font-size:10px;font-weight:650;padding:7px 0}
+.tab svg{width:20px;height:20px}
+.tab.active{color:#a8caff;background:#172944}
+.week-list{display:flex;flex-direction:column;gap:8px}
+.week-day{width:100%;text-align:left;padding:14px;border:1px solid var(--line);border-radius:15px;background:var(--surface);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.week-day.active{border-color:#548be0;background:#182b48}
+.week-day-main{min-width:0}
+.week-day-title{font-weight:700;text-transform:capitalize}
+.week-day small{display:block;color:var(--muted);margin-top:4px;font-size:11px}
+.week-day-right{text-align:right;flex:none;color:var(--blue);font-size:12px;font-weight:700}
+.week-day-right svg{width:17px;height:17px;vertical-align:middle}
+.smallprint{font-size:11px;color:var(--muted);margin-top:13px;line-height:1.55}
+.modal-backdrop{position:fixed;inset:0;z-index:20;display:none;align-items:flex-end;justify-content:center;padding:16px;background:#03060bc9;backdrop-filter:blur(5px)}
+.modal-backdrop.open{display:flex}
+.modal{width:min(100%,520px);padding:19px;border:1px solid #34425a;border-radius:22px;background:#121a29;box-shadow:0 20px 80px #0008;animation:appear .18s ease-out}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.modal-head h2{font-size:18px;margin:0}
+.modal-close{width:34px;height:34px;border:1px solid var(--line);border-radius:11px;background:var(--surface)}
+.field-label{display:block;font-size:12px;color:var(--muted);margin:14px 0 7px}
+.field{width:100%;padding:12px;border:1px solid #34425a;border-radius:12px;background:#0b111d;color:var(--text)}
+.field:focus{border-color:var(--blue)}
+.primary-btn{width:100%;margin-top:16px;padding:12px;border:0;border-radius:13px;background:linear-gradient(100deg,#8bbcff,#6c8eff);color:#081225;font-weight:800}
+.secondary-btn{width:100%;margin-top:8px;padding:11px;border:1px solid var(--line);border-radius:12px;background:transparent;color:#d0dbef;font-weight:650}
+@media(min-width:560px){.app{padding:25px 22px 105px}.title{font-size:23px}.lesson{padding:16px;grid-template-columns:64px minmax(0,1fr)}.lesson-title{font-size:15px}.metric{padding:16px}.date-label{font-size:22px}.modal-backdrop{align-items:center}}
+@media(max-width:370px){.app{padding-left:11px;padding-right:11px}.day-btn .day-name{font-size:9px}.day-btn .day-number{font-size:14px}.lesson{grid-template-columns:51px minmax(0,1fr);gap:9px;padding:11px}.lesson-title{font-size:13px}.metric{padding:12px 9px;gap:8px}.metric-icon{width:32px;height:32px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="top"><div class="brand"><div class="logo">▦</div><div><div class="title">Моё расписание</div><div class="subtitle" id="header-subtitle">МПТ · учебный календарь</div></div></div><button class="iconbtn" id="refresh" aria-label="Обновить расписание" title="Обновить">↻</button></header>
-<main>
-<section class="page active" id="page-today">
-<div class="datebar"><div class="date-label" id="date-label">Сегодня</div><div class="date-actions"><button id="prev-day" aria-label="Предыдущий день">‹</button><button class="todaybtn" id="today-btn">Сегодня</button><button id="next-day" aria-label="Следующий день">›</button></div></div>
-<div class="weekstrip" id="weekstrip"></div>
-<div class="summary"><div class="metric"><span class="metric-icon">▤</span><div><small>Занятий сегодня</small><strong id="class-count">4 пары</strong></div></div><div class="metric"><span class="metric-icon">◷</span><div><small>Общее время</small><strong id="total-hours">5 ч 30 мин</strong></div></div></div>
-<div class="section-head"><h2>Занятия</h2><span id="day-progress">4 занятия</span></div><div class="classes" id="classes"></div>
-<div class="section-head"><h2>Замены</h2><span>с сайта МПТ</span></div><div class="replace-card"><div class="replace-head"><b>↔ &nbsp; Изменения в расписании</b><span class="pill" id="replacement-status">Не проверено</span></div><div class="replace-body" id="replacement-body"><strong>Данные о заменах пока не подключены</strong>Когда будет настроен источник данных сайта, здесь появятся актуальные изменения по предметам, преподавателям и аудиториям.</div></div>
-<div class="next-card"><span class="next-icon">◷</span><div class="next-info"><small id="next-label">Ближайшее занятие</small><strong id="next-title">Загрузка расписания…</strong></div><span class="next-time" id="next-time"></span></div>
-<p class="notice" id="data-notice">Сейчас отображается пример расписания с вашего скриншота. Живые данные сайта ещё не подключены.</p>
-</section>
-<section class="page" id="page-week"><div class="section-head"><h2>Неделя</h2><span id="week-range"></span></div><div class="week-list" id="week-list"></div><p class="smallprint">Выберите день, чтобы посмотреть его расписание. Для корректной недельной сетки нужен подключённый источник данных сайта.</p></section>
-<section class="page" id="page-replacements"><div class="section-head"><h2>Замены</h2><span>МПТ</span></div><div class="replace-card"><div class="replace-head"><b>↔ &nbsp; Замены и изменения</b><span class="pill" id="replacement-status-2">Не подключено</span></div><div class="replace-body" id="replacement-body-2"><strong>Источник замен ещё не настроен</strong>После подключения данных сайта этот раздел будет показывать изменения в расписании.</div></div><p class="smallprint">Приложение не будет придумывать замены: если сайт недоступен, оно должно показывать дату последнего успешного обновления.</p></section>
-<section class="page" id="page-settings"><div class="section-head"><h2>Настройки</h2></div><div class="settings-row"><label for="reminder">Напоминать до пары, минут</label><input id="reminder" type="number" min="0" max="120" value="10"></div><div class="settings-row"><label for="api-url">Адрес API расписания</label><input id="api-url" type="url" placeholder="https://ваш-сервер/api" style="width:55%"></div><button class="primarybtn" id="save-settings">Сохранить настройки</button><p class="smallprint">Адрес API можно указать после размещения серверной части. Один GitHub Pages не может безопасно авторизоваться на учебном сайте, обходить его ограничения или гарантировать уведомления в фоне.</p></section>
-</main>
+  <header class="top">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M7.5 3v4M16.5 3v4M4 9.5h16M8 13h3M8 16.5h7"/></svg></div>
+      <div><div class="title">Моё расписание</div><div class="subtitle" id="header-subtitle">МПТ · учебный календарь</div></div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="refresh" aria-label="Обновить расписание" title="Обновить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M5.6 9A7 7 0 0 1 18 6l2 6M4 12l2 6a7 7 0 0 0 12.4-3"/></svg></button>
+      <button class="icon-btn" id="open-settings" aria-label="Настройки" title="Настройки"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.6a8 8 0 0 1-1.5.9l-.2 1.5h-3l-.2-1.5a8 8 0 0 1-1.5-.9l-1.4.6-1.5-2.6 1.1-.9a7 7 0 0 1 0-1.8l-1.1-.9 1.5-2.6 1.4.6a8 8 0 0 1 1.5-.9l.2-1.5h3l.2 1.5a8 8 0 0 1 1.5.9l1.4-.6 1.5 2.6-1.1.9a7 7 0 0 1 0 1.7Z" transform="translate(-1 -1) scale(1.04)"/></svg></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" id="page-today">
+      <div class="datebar"><div class="date-label" id="date-label">Сегодня</div><div class="date-actions"><button id="prev-day" aria-label="Предыдущий день">‹</button><button class="today-btn" id="today-btn">Сегодня</button><button id="next-day" aria-label="Следующий день">›</button></div></div>
+      <div class="week-strip" id="weekstrip"></div>
+      <div class="summary">
+        <div class="metric"><span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8 2v4M16 2v4M4 9h16M8 13h3M8 17h7"/></svg></span><div><small>Занятий за день</small><strong id="class-count">4 пары</strong></div></div>
+        <div class="metric"><span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><small>Время занятий</small><strong id="total-hours">5 ч 30 мин</strong></div></div>
+      </div>
+      <div class="section-head"><h2>Расписание</h2><span id="day-progress">4 занятия</span></div>
+      <div class="classes" id="classes"></div>
+      <div class="section-head"><h2>Замены</h2><span>МПТ</span></div>
+      <div class="replace-card"><div class="replace-head"><div class="replace-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h15l-3-3M20 17H5l3 3"/></svg>Изменения в расписании</div><span class="pill" id="replacement-status">Не проверено</span></div><div class="replace-body" id="replacement-body"><strong>Замены пока не загружены</strong>После подключения источника данных здесь появятся изменения в предметах, преподавателях и аудиториях.</div></div>
+      <div class="next-card"><span class="next-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="next-info"><small id="next-label">Ближайшее занятие</small><strong id="next-title">Загрузка расписания…</strong></div><span class="next-time" id="next-time"></span></div>
+      <p class="notice" id="data-notice">Подключаем расписание…</p>
+    </section>
+
+    <section class="page" id="page-week">
+      <div class="section-head"><h2>Неделя</h2><span id="week-range"></span></div>
+      <div class="week-list" id="week-list"></div>
+      <p class="smallprint">Нажми на день, чтобы открыть его расписание. Точка под датой означает, что для этого дня получены занятия.</p>
+    </section>
+
+    <section class="page" id="page-replacements">
+      <div class="section-head"><h2>Замены и изменения</h2><span>МПТ</span></div>
+      <div class="replace-card"><div class="replace-head"><div class="replace-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h15l-3-3M20 17H5l3 3"/></svg>Последние изменения</div><span class="pill" id="replacement-status-2">Не подключено</span></div><div class="replace-body" id="replacement-body-2"><strong>Источник замен ещё не настроен</strong>Приложение не будет придумывать изменения, которых нет в полученных данных.</div></div>
+      <p class="smallprint">Сейчас тестовый API не получает реальное расписание с сайта МПТ. Для актуальных замен ещё нужно подключить источник данных.</p>
+    </section>
+  </main>
 </div>
-<nav class="tabs" aria-label="Навигация"><button class="tab active" data-page="today"><span class="tabicon">⌂</span>Сегодня</button><button class="tab" data-page="week"><span class="tabicon">▦</span>Неделя</button><button class="tab" data-page="replacements"><span class="tabicon">↔</span>Замены</button><button class="tab" data-page="settings"><span class="tabicon">⚙</span>Настройки</button></nav>
+
+<nav class="tabs" aria-label="Навигация">
+  <button class="tab active" data-page="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Сегодня</button>
+  <button class="tab" data-page="week"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9h18M8 13h3M14 13h3M8 17h3"/></svg>Неделя</button>
+  <button class="tab" data-page="replacements"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h15l-3-3M20 17H5l3 3"/></svg>Замены</button>
+</nav>
+
+<div class="modal-backdrop" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+  <div class="modal">
+    <div class="modal-head"><h2 id="settings-title">Настройки</h2><button class="modal-close" id="close-settings" aria-label="Закрыть">✕</button></div>
+    <p class="smallprint">Настройки сохраняются только в этом браузере.</p>
+    <label class="field-label" for="api-url">Адрес API расписания</label>
+    <input class="field" id="api-url" type="url" autocomplete="url" placeholder="https://адрес-worker.workers.dev">
+    <label class="field-label" for="reminder">Напоминать до пары, минут</label>
+    <input class="field" id="reminder" type="number" min="0" max="120" value="10">
+    <button class="primary-btn" id="save-settings">Сохранить и проверить подключение</button>
+    <button class="secondary-btn" id="reset-api">Вернуть адрес тестового API</button>
+    <p class="smallprint">Тестовый API пока возвращает пример занятия. Настоящее расписание и замены МПТ ещё не подключены.</p>
+  </div>
+</div>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-/*
-  FRONTEND. После развёртывания backend задайте API_BASE или введите его в настройках.
-  Ожидаемый GET /schedule?date=YYYY-MM-DD:
-  { "date":"2026-10-24", "lessons":[{"number":1,"subject":"...","teacher":"...","location":"Нежинская","start":"08:30","end":"10:00","replacement":null}], "replacements":[], "updated_at":"..." }
-  Важно: расписание ниже — демонстрационные данные со скриншота, не live-данные сайта.
-*/
+const DEFAULT_API='https://sparkling-glitter-c62c.alvarezleo1834.workers.dev';
 const DEMO_LESSONS=[
  {number:1,subject:'Иностранный язык в профессиональной деятельности',teacher:'Карцева Алина Викторовна',location:'Нежинская',start:'08:30',end:'10:00'},
  {number:2,subject:'Графический дизайн и мультимедиа',teacher:'Кретова Екатерина Максимовна',location:'Нежинская',start:'10:10',end:'11:40'},
  {number:3,subject:'Разработка программного кода для устройств пром. ИВ на формальном алг. языке',teacher:'Вилков Андрей Николаевич',location:'Нежинская',start:'12:00',end:'13:30'},
  {number:4,subject:'Менеджмент в профессиональной деятельности',teacher:'Кицына Светлана Павловна',location:'Нежинская',start:'13:50',end:'15:20'}
 ];
-let selectedDate=new Date();selectedDate.setHours(0,0,0,0);let lessons=[...DEMO_LESSONS];let replacements=[];let apiBase='';let liveData=false;
-const $=id=>document.getElementById(id);const pad=n=>String(n).padStart(2,'0');const keyDate=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const parseTime=s=>{const [h,m]=s.split(':').map(Number);return h*60+m};const fmtDate=d=>new Intl.DateTimeFormat('ru-RU',{weekday:'long',day:'numeric',month:'long'}).format(d);const fmtShort=d=>new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'short'}).format(d);const minsToText=n=>{n=Math.max(0,n);const h=Math.floor(n/60),m=n%60;return h?`${h} ч ${m} мин`:`${m} мин`};
-function dayLessons(){return [...lessons].sort((a,b)=>parseTime(a.start)-parseTime(b.start))}
-function renderWeekstrip(){const root=$('weekstrip');root.innerHTML='';const start=new Date(selectedDate);const monday=(start.getDay()+6)%7;start.setDate(start.getDate()-monday);for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);const b=document.createElement('button');b.className='daybtn'+(keyDate(d)===keyDate(selectedDate)?' active':'');b.innerHTML=`<span>${new Intl.DateTimeFormat('ru-RU',{weekday:'short'}).format(d).replace('.','')}</span><b>${d.getDate()}</b>`;b.onclick=()=>{selectedDate=d;render()};root.appendChild(b)}}
-function render(){ $('date-label').textContent=fmtDate(selectedDate);$('header-subtitle').textContent=selectedDate.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});renderWeekstrip();const list=dayLessons();$('class-count').textContent=`${list.length} ${list.length===1?'пара':list.length>=2&&list.length<=4?'пары':'пар'}`;const total=list.reduce((s,l)=>s+parseTime(l.end)-parseTime(l.start),0);$('total-hours').textContent=minsToText(total);$('day-progress').textContent=`${list.length} ${list.length===1?'занятие':'занятия'}`;
- const now=new Date(),today=keyDate(now)===keyDate(selectedDate),nowM=now.getHours()*60+now.getMinutes();let current=-1,next=-1;if(today){list.forEach((l,i)=>{if(nowM>=parseTime(l.start)&&nowM<parseTime(l.end))current=i;else if(next<0&&nowM<parseTime(l.start))next=i})}else if(keyDate(selectedDate)>keyDate(now)&&list.length)next=0;
- const root=$('classes');root.innerHTML='';if(!list.length){root.innerHTML='<div class="empty">На этот день занятий нет или расписание ещё не загружено.</div>'}list.forEach((l,i)=>{const el=document.createElement('article');el.className='lesson'+(i===current?' current':'');let state='';if(i===current)state=`<div class="status">СЕЙЧАС · осталось ${minsToText(parseTime(l.end)-nowM)}</div>`;else if(today&&i<current)state='<div class="status" style="color:var(--muted)">ЗАВЕРШЕНО</div>';const place=l.location||'Место не указано';el.innerHTML=`<div class="timecol"><b>${l.start}</b><small>${l.end}</small></div><div class="lesson-body">${state}<h3 class="lesson-title">${escapeHtml(l.subject||'Предмет не указан')}</h3><div class="lesson-meta"><span class="meta-item"><span class="sym">♙</span>${escapeHtml(l.teacher||'Преподаватель не указан')}</span><span class="meta-item"><span class="sym">⌖</span>${escapeHtml(place)}</span>${l.replacement?`<span class="meta-item" style="color:var(--warn)">↔ ${escapeHtml(l.replacement)}</span>`:''}</div></div><span class="lesson-arrow">›</span>`;root.appendChild(el)});
- if(next>=0){const l=list[next];$('next-label').textContent='Следующая пара';$('next-title').textContent=l.subject;$('next-time').textContent=today?`через ${minsToText(parseTime(l.start)-nowM)}`:l.start}else if(current>=0){$('next-label').textContent='Перерыв';$('next-title').textContent='Сейчас идёт пара';$('next-time').textContent=`до ${list[current].end}`}else{$('next-label').textContent='Ближайшее занятие';$('next-title').textContent=list.length?'На сегодня занятия завершены':'Нет запланированных занятий';$('next-time').textContent=''}
- const rep=$('replacement-body');const rep2=$('replacement-body-2');if(liveData){const r=replacements.length?replacements.map(x=>`<div style="padding:7px 0;border-bottom:1px solid var(--line)"><strong>${escapeHtml(x.subject||'Изменение')}</strong>${escapeHtml(x.description||x.teacher||'Есть изменение в расписании')}</div>`).join(''):'<strong>Изменений не найдено</strong>По полученным данным замен нет.';rep.innerHTML=r;rep2.innerHTML=r;$('replacement-status').textContent=replacements.length?'Есть изменения':'Без изменений';$('replacement-status-2').textContent=replacements.length?'Есть изменения':'Без изменений';$('data-notice').textContent='Данные получены из подключённого API.'}else{$('replacement-status').textContent='Не подключено';$('replacement-status-2').textContent='Не подключено';$('data-notice').textContent='Демонстрационные данные со скриншота. Живые данные mpt.rea.ru ещё не подключены.'}
- renderWeekList();}
-function renderWeekList(){const root=$('week-list');root.innerHTML='';const monday=new Date(selectedDate);monday.setDate(monday.getDate()-((monday.getDay()+6)%7));$('week-range').textContent=`${fmtShort(monday)} — ${fmtShort(new Date(monday.getFullYear(),monday.getMonth(),monday.getDate()+6))}`;for(let i=0;i<7;i++){const d=new Date(monday);d.setDate(monday.getDate()+i);const b=document.createElement('button');b.className='week-day'+(keyDate(d)===keyDate(selectedDate)?' active':'');b.innerHTML=`<span>${escapeHtml(fmtDate(d))}<small>${keyDate(d)===keyDate(new Date())?'Сегодня':keyDate(d)===keyDate(new Date(Date.now()+86400000))?'Завтра':'Расписание на день'}</small></span><span>›</span>`;b.onclick=()=>{selectedDate=d;showPage('today');render()};root.appendChild(b)}}
+let selectedDate=new Date();selectedDate.setHours(0,0,0,0);
+let lessons=[...DEMO_LESSONS],replacements=[],apiBase=localStorage.getItem('mpt_api_base')||DEFAULT_API;
+let liveData=false,apiConnected=false,requestError='';
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,'0');
+const keyDate=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const parseTime=s=>{if(!s||!s.includes(':'))return 0;const [h,m]=s.split(':').map(Number);return h*60+m};
+const fmtDate=d=>new Intl.DateTimeFormat('ru-RU',{weekday:'long',day:'numeric',month:'long'}).format(d);
+const fmtShort=d=>new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'short'}).format(d);
+const minsToText=n=>{n=Math.max(0,n);const h=Math.floor(n/60),m=n%60;return h?`${h} ч${m?' '+m+' мин':''}`:`${m} мин`};
+const icon=(name)=>({pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',person:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',break:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v5a4 4 0 0 0 8 0V4M8 13v7M3 20h10M16 5h3a2 2 0 0 1 0 4h-3M16 13h4"/></svg>'}[name]||'');
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dayLessons(){return [...lessons].sort((a,b)=>parseTime(a.start)-parseTime(b.start))}
+function renderWeekstrip(){
+ const root=$('weekstrip');root.innerHTML='';
+ const monday=new Date(selectedDate);monday.setDate(monday.getDate()-((monday.getDay()+6)%7));
+ const names=['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС'];
+ for(let i=0;i<7;i++){
+  const d=new Date(monday);d.setDate(monday.getDate()+i);
+  const b=document.createElement('button');b.className='day-btn'+(keyDate(d)===keyDate(selectedDate)?' active':'');
+  if(keyDate(d)===keyDate(new Date()))b.setAttribute('aria-label','Сегодня, '+fmtDate(d));
+  b.innerHTML=`<span class="day-name">${names[i]}</span><b class="day-number">${d.getDate()}</b><span class="day-dot"></span>`;
+  if(keyDate(d)===keyDate(selectedDate)&&lessons.length)b.classList.add('has-classes');
+  b.onclick=()=>{selectedDate=d;refreshData()};root.appendChild(b);
+ }
+}
+function render(){
+ $('date-label').textContent=fmtDate(selectedDate);
+ $('header-subtitle').textContent=selectedDate.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+ renderWeekstrip();
+ const list=dayLessons();
+ $('class-count').textContent=`${list.length} ${list.length===1?'пара':list.length>=2&&list.length<=4?'пары':'пар'}`;
+ const total=list.reduce((s,l)=>s+Math.max(0,parseTime(l.end)-parseTime(l.start)),0);
+ $('total-hours').textContent=minsToText(total);
+ $('day-progress').textContent=`${list.length} ${list.length===1?'занятие':list.length>=2&&list.length<=4?'занятия':'занятий'}`;
+ const now=new Date(),today=keyDate(now)===keyDate(selectedDate),nowM=now.getHours()*60+now.getMinutes();
+ let current=-1,next=-1;
+ if(today){list.forEach((l,i)=>{if(nowM>=parseTime(l.start)&&nowM<parseTime(l.end))current=i;else if(next<0&&nowM<parseTime(l.start))next=i})}
+ else if(keyDate(selectedDate)>keyDate(now)&&list.length)next=0;
+ const root=$('classes');root.innerHTML='';
+ if(!list.length)root.innerHTML='<div class="empty"><strong>Занятий не найдено</strong>На выбранную дату нет занятий в полученных данных.</div>';
+ list.forEach((l,i)=>{
+  if(i>0){
+   const gap=parseTime(l.start)-parseTime(list[i-1].end);
+   if(gap>0)root.insertAdjacentHTML('beforeend',`<div class="break-row"><span class="break-line"></span><span class="break-tag">${icon('break')} Перемена <b>${minsToText(gap)}</b></span><span class="break-line"></span></div>`);
+  }
+  const el=document.createElement('article');el.className='lesson'+(i===current?' current':'');
+  let state='';if(i===current)state=`<div class="status">ИДЁТ СЕЙЧАС · ${minsToText(parseTime(l.end)-nowM)}</div>`;else if(today&&current>=0&&i<current)state='<div class="status done">ЗАВЕРШЕНО</div>';
+  el.innerHTML=`<div class="time-col"><b>${escapeHtml(l.start||'--:--')}</b><small>${escapeHtml(l.end||'--:--')}</small></div><div class="lesson-body">${state}<h3 class="lesson-title">${escapeHtml(l.subject||'Предмет не указан')}</h3><div class="lesson-meta"><span class="meta-item">${icon('person')}${escapeHtml(l.teacher||'Преподаватель не указан')}</span><span class="meta-item">${icon('pin')}${escapeHtml(l.location||'Аудитория не указана')}</span>${l.replacement?`<span class="meta-item" style="color:var(--amber)">↔ ${escapeHtml(l.replacement)}</span>`:''}</div></div>`;
+  root.appendChild(el);
+ });
+ if(next>=0){const l=list[next];$('next-label').textContent='Следующая пара';$('next-title').textContent=l.subject||'Занятие';$('next-time').textContent=today?`через ${minsToText(parseTime(l.start)-nowM)}`:l.start||''}
+ else if(current>=0){$('next-label').textContent='Перерыв';$('next-title').textContent='Сейчас идёт пара';$('next-time').textContent=`до ${list[current].end}`}
+ else{$('next-label').textContent='Ближайшее занятие';$('next-title').textContent=list.length?'На сегодня занятия завершены':'Нет занятий';$('next-time').textContent=''}
+ const repHtml=replacements.length?replacements.map(x=>`<div style="padding:8px 0;border-bottom:1px solid var(--line)"><strong>${escapeHtml(x.subject||'Изменение')}</strong>${escapeHtml(x.description||x.teacher||'Есть изменение в расписании')}</div>`).join(''):'<strong>Замены не получены</strong>В ответе API пока нет информации об изменениях.';
+ $('replacement-body').innerHTML=repHtml;$('replacement-body-2').innerHTML=repHtml;
+ $('replacement-status').textContent=replacements.length?'Есть изменения':(apiConnected?'Нет замен':'Не подключено');
+ $('replacement-status-2').textContent=replacements.length?'Есть изменения':(apiConnected?'Нет замен':'Не подключено');
+ $('replacement-status').className='pill '+(replacements.length?'warn':apiConnected?'ok':'');
+ $('replacement-status-2').className='pill '+(replacements.length?'warn':apiConnected?'ok':'');
+ const notice=$('data-notice');notice.className='notice'+(requestError?' error':apiConnected?' connected':'');
+ if(requestError)notice.textContent='Не удалось обновить данные: '+requestError+'. Отображаются последние сохранённые данные.';
+ else if(apiConnected&&liveData)notice.textContent='Подключено к API. Получены актуальные данные от серверной части.';
+ else if(apiConnected)notice.textContent='API отвечает, но возвращает тестовые данные. Реальное расписание МПТ ещё не подключено.';
+ else notice.textContent='Пока отображаются демонстрационные данные. Проверь адрес API в настройках.';
+ renderWeekList();
+}
+function renderWeekList(){
+ const root=$('week-list');root.innerHTML='';
+ const monday=new Date(selectedDate);monday.setDate(monday.getDate()-((monday.getDay()+6)%7));
+ $('week-range').textContent=`${fmtShort(monday)} — ${fmtShort(new Date(monday.getFullYear(),monday.getMonth(),monday.getDate()+6))}`;
+ for(let i=0;i<7;i++){
+  const d=new Date(monday);d.setDate(monday.getDate()+i);
+  const b=document.createElement('button');b.className='week-day'+(keyDate(d)===keyDate(selectedDate)?' active':'');
+  const label=keyDate(d)===keyDate(new Date())?'Сегодня':keyDate(d)===keyDate(new Date(Date.now()+86400000))?'Завтра':'Выбрать день';
+  b.innerHTML=`<span class="week-day-main"><span class="week-day-title">${escapeHtml(fmtDate(d))}</span><small>${label}</small></span><span class="week-day-right">${keyDate(d)===keyDate(selectedDate)?'Выбран':'Открыть'}　›</span>`;
+  b.onclick=()=>{selectedDate=d;showPage('today');refreshData();window.scrollTo({top:0,behavior:'smooth'})};root.appendChild(b);
+ }
+}
+async function refreshData(){
+ requestError='';
+ if(!apiBase){apiConnected=false;liveData=false;lessons=[...DEMO_LESSONS];replacements=[];render();return}
+ $('data-notice').textContent='Обновляем расписание…';
+ try{
+  const base=apiBase.trim().replace(/\/+$/,'').replace(/\/schedule$/,'');
+  const url=`${base}/schedule?date=${encodeURIComponent(keyDate(selectedDate))}`;
+  const response=await fetch(url,{headers:{'Accept':'application/json'}});
+  if(!response.ok)throw new Error(`сервер ответил ${response.status}`);
+  const data=await response.json();
+  if(!Array.isArray(data.lessons))throw new Error('в ответе API нет массива lessons');
+  lessons=data.lessons;replacements=Array.isArray(data.replacements)?data.replacements:[];
+  apiConnected=true;liveData=data.liveData===true;
+ }catch(err){requestError=err?.message||'ошибка подключения';apiConnected=false}
+ render();
+}
 function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===`page-${name}`));document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.page===name))}
-async function refreshData(){if(!apiBase){render();return}try{const url=`${apiBase.replace(/\/$/,'')}/schedule?date=${encodeURIComponent(keyDate(selectedDate))}`;const response=await fetch(url,{headers:{'Accept':'application/json'}});if(!response.ok)throw new Error(`API ответил ${response.status}`);const data=await response.json();if(!Array.isArray(data.lessons))throw new Error('В ответе API нет массива lessons');lessons=data.lessons;replacements=Array.isArray(data.replacements)?data.replacements:[];liveData=true;render()}catch(err){$('data-notice').textContent=`Не удалось загрузить данные: ${err.message}. Показаны последние доступные демонстрационные данные.`;$('data-notice').classList.add('error')}}
-$('prev-day').onclick=()=>{selectedDate.setDate(selectedDate.getDate()-1);refreshData();render()};$('next-day').onclick=()=>{selectedDate.setDate(selectedDate.getDate()+1);refreshData();render()};$('today-btn').onclick=()=>{selectedDate=new Date();selectedDate.setHours(0,0,0,0);refreshData();render()};$('refresh').onclick=()=>refreshData();document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));$('save-settings').onclick=()=>{apiBase=$('api-url').value.trim().replace(/\/$/,'');localStorage.setItem('mpt_api_base',apiBase);localStorage.setItem('mpt_reminder',$('reminder').value);refreshData();alert('Настройки сохранены на этом устройстве.')};apiBase=localStorage.getItem('mpt_api_base')||'';$('api-url').value=apiBase;$('reminder').value=localStorage.getItem('mpt_reminder')||'10';render();setInterval(()=>{if(document.visibilityState==='visible')render()},30000);
-// Telegram Mini App integration, when opened inside Telegram.
-if(window.Telegram?.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}
+$('prev-day').onclick=()=>{selectedDate.setDate(selectedDate.getDate()-1);refreshData()};
+$('next-day').onclick=()=>{selectedDate.setDate(selectedDate.getDate()+1);refreshData()};
+$('today-btn').onclick=()=>{selectedDate=new Date();selectedDate.setHours(0,0,0,0);refreshData()};
+$('refresh').onclick=()=>refreshData();
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function openSettings(){$('api-url').value=apiBase;$('reminder').value=localStorage.getItem('mpt_reminder')||'10';$('settings-modal').classList.add('open')}
+function closeSettings(){$('settings-modal').classList.remove('open')}
+$('open-settings').onclick=openSettings;$('close-settings').onclick=closeSettings;
+$('settings-modal').addEventListener('click',e=>{if(e.target===$('settings-modal'))closeSettings()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSettings()});
+$('save-settings').onclick=async()=>{apiBase=$('api-url').value.trim().replace(/\/+$/,'');localStorage.setItem('mpt_api_base',apiBase);localStorage.setItem('mpt_reminder',$('reminder').value);await refreshData();closeSettings()};
+$('reset-api').onclick=()=>{$('api-url').value=DEFAULT_API};
+if(window.Telegram?.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}
+render();
+refreshData();
+setInterval(()=>{if(document.visibilityState==='visible')render()},30000);
 </script>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-</body></html>
-l>
+</body>
+</html>
